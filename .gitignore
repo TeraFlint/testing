@@ -30,3 +30,13 @@
 *.exe
 *.out
 *.app
+
+# IDE specific stuff (for visual studio in this case), my goal is to generalize this via CMake.
+# not sure if https://github.com/github/gitignore/blob/main/VisualStudio.gitignore is needed. We'll see.
+.vs/
+[Dd]ebug/
+[Rr]elease/
+*.sln
+*.vcxproj
+*.vcxproj.filters
+*.vcxproj.user
