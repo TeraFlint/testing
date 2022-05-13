@@ -9,15 +9,12 @@ import p3.testing.core;
 */
 
 
-namespace p3
+namespace p3::testing
 {
-	namespace testing
+	export
+	template <typename crtp_type, bool enabled = true>
+	struct unit_test
 	{
-		export
-		template <typename crtp_type, bool enabled = true>
-		struct unit_test
-		{
-			virtual void run_test() const = 0;
-		};
-	}
+		virtual void run_test() const = 0;
+	};
 }
