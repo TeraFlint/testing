@@ -11,15 +11,12 @@ export import p3.testing.performance_test;
 	test execution, evaluation, result saving
 */
 
-namespace p3
+namespace p3::testing
 {
-	namespace testing
+	export
+	void run() noexcept
 	{
-		export
-		void run() noexcept
-		{
-			std::cout << "p3::testing::run()" << std::endl;
-			// todo
-		}
+		std::cout << "p3::testing::run()" << std::endl;
+		// todo
 	}
 }
