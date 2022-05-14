@@ -13,8 +13,7 @@ namespace p3::testing
 {
 	export
 	template <typename crtp_type, bool enabled = true>
-	struct unit_test
+	struct unit_test : basic_test<crtp_type, enabled>
 	{
-		virtual void run_test() const = 0;
 	};
 }

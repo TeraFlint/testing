@@ -16,7 +16,7 @@ namespace p3::testing
 {
 	export
 	template <typename crtp_type, bool enabled = true, typename ...par_types>
-	struct property_test
+	struct property_test : basic_test<crtp_type, enabled>
 	{
 		virtual void run_test(const par_types &...par) = 0;
 		virtual std::tuple<par_types...> generate_parameters() = 0;

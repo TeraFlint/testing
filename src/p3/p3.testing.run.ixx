@@ -3,9 +3,10 @@ module;
 
 export module p3.testing.run;
 
-export import p3.testing.unit_test;
-export import p3.testing.property_test;
-export import p3.testing.performance_test;
+import p3.testing.core; // factory_collector()
+import p3.testing.unit_test;
+import p3.testing.property_test;
+import p3.testing.performance_test;
 
 /*
 	test execution, evaluation, result saving
@@ -14,9 +15,20 @@ export import p3.testing.performance_test;
 namespace p3::testing
 {
 	export
-	void run() noexcept
+	template <typename map_type>
+	constexpr void run(map_type &&factory_pointer_map) noexcept
 	{
-		std::cout << "p3::testing::run()" << std::endl;
-		// todo
+		std::cout << "p3::testing::run(map)" << std::endl;
+
+		for (const auto &[hierarchy, factory] : factory_pointer_map)
+		{
+			// todo
+		}
+	}
+
+	export
+	auto run() noexcept
+	{
+		return run(factory_collector());
 	}
 }
